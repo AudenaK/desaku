@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Desa Kalikayen, desa dengan keindahan alam dan budaya yang kaya." />
+    <meta name="keywords" content="Desa Kalikayen, wisata, budaya, alam, berita desa" />
+    <meta name="author" content="Tim Desa Kalikayen" />
+    <title>Desa Kalikayen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet" />
+    <style>
+        .news-card img { transition: transform 0.3s ease; }
+        .news-card:hover img { transform: scale(1.05); }
+        #calendar { max-width: 100%; margin: 0 auto; }
+        .fc .fc-view-harness { max-height: 300px; }
+        nav ul li a.active {
+            color: #a7a092;
+            font-weight: bold;
+            border-bottom: 2px solid #a7a092;
+        }
+        .demografi-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .demografi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        #mobile-menu { transition: max-height 0.3s ease-out; max-height: 0; overflow: hidden; }
+        #mobile-menu.active { max-height: 1000px; }
+        .mobile-dropdown-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.5rem 0; }
+        .mobile-dropdown-menu { transition: all 0.3s ease; }
+        [aria-expanded="true"] .arrow { transform: rotate(180deg); }
+    </style>
+  </head>
+  <body class="bg-gray-100 pt-16">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-stone-300 text-stone-800 py-4 shadow-md z-50"
+    >
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <img
+          src="img\logo-kalikayen.png"
+          alt="Logo Desa Kalikayen"
+          class="h-20 w-20"
+          loading="lazy"
+        />
+        <h1 class="text-3xl font-bold">Desa Kalikayen</h1>
+        <ul class="hidden md:flex space-x-7">
+          <li><a href="index.html" class="hover:text-stone-400">Beranda</a></li>
+
+          <li class="relative group">
+            <a href="#" class="hover:text-stone-400">Profil Desa</a>
+            <ul
+              class="absolute hidden group-hover:block bg-stone-300 text-stone-800 py-2 space-y-2 w-48 shadow-md rounded"
+            >
+              <li>
+                <a
+                  href="struktur-organisasi.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >Struktur Organisasi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="sejarah.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >Sejarah</a
+                >
+              </li>
+              <li>
+                <a
+                  href="wilayah-desa.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >Wilayah Desa</a
+                >
+              </li>
+              <li>
+                <a
+                  href="visi-misi.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >Visi Misi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="demografi.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >Demografi</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="relative group">
+            <a href="#" class="hover:text-stone-400">Informasi Desa</a>
+            <ul
+              class="absolute hidden group-hover:block bg-stone-300 text-stone-800 py-2 space-y-2 w-48 shadow-md rounded"
+            >
+              <li>
+                <a href="berita.html" class="block px-4 py-2 hover:bg-stone-400"
+                  >Berita</a
+                >
+              </li>
+              <li>
+                <a href="agenda.html" class="block px-4 py-2 hover:bg-stone-400"
+                  >Agenda</a
+                >
+              </li>
+              <li>
+                <a href="galeri.html" class="block px-4 py-2 hover:bg-stone-400"
+                  >Galeri</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="relative group">
+            <a href="#" class="hover:text-stone-400">Pelayanan</a>
+            <ul
+              class="absolute hidden group-hover:block bg-stone-300 text-stone-800 py-2 space-y-2 w-48 shadow-md rounded"
+            >
+              <li>
+                <a
+                  href="sop-pelayanan.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >SOP Pelayanan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="jenis-pelayanan.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >Jenis Pelayanan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="layanan-pengaduan.html"
+                  class="block px-4 py-2 hover:bg-stone-400"
+                  >Layanan Pengaduan</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="kontak.html" class="hover:text-stone-400">Kontak</a></li>
+          <li><a href="login.html" class="hover:text-stone-400">Login</a></li>
+        </ul>
+
+        <button class="md:hidden text-2xl" id="menu-button" aria-label="Toggle mobile menu">☰</button>
+      </div>
+
+      <div
+        class="md:hidden hidden bg-stone-300 text-stone-800 py-2"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+      >
+        <ul class="flex flex-col space-y-3 px-6">
+          <li><a href="index.html" class="hover:text-stone-400">Beranda</a></li>
+
+          <li>
+            <button class="mobile-dropdown-btn" id="mobile-profil" aria-expanded="false" aria-controls="mobile-profil-menu">
+              <span>Profil Desa</span>
+              <span class="arrow transform transition-transform">▼</span>
+            </button>
+            <ul class="mobile-dropdown-menu hidden pl-4 space-y-2" id="mobile-profil-menu" aria-label="Submenu Profil Desa">
+              <li><a href="struktur-organisasi.html" class="hover:text-stone-400">Struktur Organisasi</a></li>
+              <li><a href="sejarah.html" class="hover:text-stone-400">Sejarah</a></li>
+              <li><a href="wilayah-desa.html" class="hover:text-stone-400">Wilayah Desa</a></li>
+              <li><a href="visi-misi.html" class="hover:text-stone-400">Visi Misi</a></li>
+              <li><a href="demografi.html" class="hover:text-stone-400">Demografi</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <button class="mobile-dropdown-btn" id="mobile-informasi" aria-expanded="false" aria-controls="mobile-informasi-menu">
+              <span>Informasi Desa</span>
+              <span class="arrow transform transition-transform">▼</span>
+            </button>
+            <ul class="mobile-dropdown-menu hidden pl-4 space-y-2" id="mobile-informasi-menu" aria-label="Submenu Informasi Desa">
+              <li>
+                <a href="berita.html" class="hover:text-stone-400">Berita</a>
+              </li>
+              <li>
+                <a href="agenda.html" class="hover:text-stone-400">Agenda</a>
+              </li>
+              <li>
+                <a href="galeri.html" class="hover:text-stone-400">Galeri</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <button
+            class="mobile-dropdown-btn" id="mobile-pelayanan" aria-expanded="false" aria-controls="mobile-pelayanan-menu">
+              <span>Pelayanan</span>
+              <span class="arrow transform transition-transform">▼</span>
+            </button>
+            <ul class="mobile-dropdown-menu hidden pl-4 space-y-2" id="mobile-pelayanan-menu" aria-label="Submenu Pelayanan">
+              <li>
+                <a href="sop-pelayanan.html" class="hover:text-stone-400"
+                  >SOP Pelayanan</a
+                >
+              </li>
+              <li>
+                <a href="jenis-pelayanan.html" class="hover:text-stone-400"
+                  >Jenis Pelayanan</a
+                >
+              </li>
+              <li>
+                <a href="layanan-pengaduan.html" class="hover:text-stone-400"
+                  >Layanan Pengaduan</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="kontak.html" class="hover:text-stone-400">Kontak</a></li>
+          <li><a href="login.html" class="hover:text-stone-400">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="h-screen flex flex-col justify-center items-center text-center bg-cover bg-center rounded-b-3xl"
+            style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0)), url('img/kalikayen.jpg');"
+            aria-label="Header utama Desa Kalikayen">
+        <h2 class="text-4xl md:text-6xl font-bold text-white shadow-lg" data-aos="fade-down">
+            Selamat Datang di Desa Kalikayen
+        </h2>
+        <a href="wilayah-desa.html" 
+           class="mt-8 px-8 py-3 bg-stone-300 text-stone-800 rounded-lg shadow-lg hover:bg-stone-400 transition-all duration-300"
+           data-aos="zoom-in"
+           aria-label="Jelajahi wilayah desa">
+            Jelajahi
+        </a>
+    </header>
+
+    <!-- Section Sambutan Kepala Desa -->
+    <section class="py-16 bg-white" aria-labelledby="sambutan-heading">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <!-- Foto Kepala Desa -->
+          <div class="w-full md:w-1/3" data-aos="fade-right">
+            <img
+              src="img/kades.jpg"
+              alt="Foto Kepala Desa Kalikayen"
+              class="w-full h-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+          <!-- Sambutan Kepala Desa -->
+          <div class="w-full md:w-2/3" data-aos="fade-left">
+            <h2 id="sambutan-heading" class="text-3xl md:text-4xl font-bold text-stone-800 mb-6">
+              Sambutan Kepala Desa
+            </h2>
+            <p class="text-stone-600 text-lg leading-relaxed">
+              "Selamat datang di website resmi Desa Kalikayen. Desa kami
+              memiliki keindahan alam dan budaya yang kaya, serta masyarakat
+              yang ramah dan bersahabat. Melalui website ini, kami berharap
+              dapat memberikan informasi terbaru tentang kegiatan, program, dan
+              perkembangan di Desa Kalikayen. Mari bersama-sama kita membangun
+              desa yang lebih maju dan sejahtera."
+            </p>
+            <p class="text-stone-800 font-semibold mt-4">- Budiyono</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Potensi Desa -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-stone-800 mb-8 text-center">
+          POTENSI DESA
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
+          <!-- UMKM -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div class="h-56 overflow-hidden">
+              <img 
+                src="img/umkm.jpg" 
+                alt="UMKM Desa Kalikayen" 
+                class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-stone-800 mb-3">UMKM</h3>
+              <p class="text-stone-600 mb-4">
+                Desa Kalikayen memiliki berbagai UMKM yang berkembang pesat, mulai dari kerajinan tangan, 
+                kuliner tradisional, hingga produk olahan pertanian yang menjadi ciri khas desa.
+              </p>
+              <a 
+                href="#" 
+                class="inline-block px-4 py-2 bg-stone-300 text-stone-800 rounded-lg hover:bg-stone-400 transition-colors"
+              >
+                Selengkapnya →
+              </a>
+            </div>
+          </div>
+          
+          <!-- Pariwisata -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div class="h-56 overflow-hidden">
+              <img 
+                src="img/wisata.jpg" 
+                alt="Pariwisata Desa Kalikayen" 
+                class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-stone-800 mb-3">Pariwisata</h3>
+              <p class="text-stone-600 mb-4">
+                Keindahan alam Desa Kalikayen menjadi daya tarik wisata yang memukau, dengan pemandangan 
+                alam yang asri, air terjun, dan berbagai atraksi budaya yang menawan.
+              </p>
+              <a 
+                href="#" 
+                class="inline-block px-4 py-2 bg-stone-300 text-stone-800 rounded-lg hover:bg-stone-400 transition-colors"
+              >
+                Selengkapnya →
+              </a>
+            </div>
+          </div>
+          
+          <!-- Pertanian -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div class="h-56 overflow-hidden">
+              <img 
+                src="img/pertanian.jpg" 
+                alt="Pertanian Desa Kalikayen" 
+                class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-stone-800 mb-3">Pertanian</h3>
+              <p class="text-stone-600 mb-4">
+                Sektor pertanian menjadi tulang punggung ekonomi desa dengan hasil panen berkualitas, 
+                meliputi padi, sayuran organik, dan buah-buahan yang menjadi komoditas unggulan.
+              </p>
+              <a 
+                href="#" 
+                class="inline-block px-4 py-2 bg-stone-300 text-stone-800 rounded-lg hover:bg-stone-400 transition-colors"
+              >
+                Selengkapnya →
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-6">
+          <a 
+            href="#" 
+            class="bg-stone-300 text-stone-800 px-6 py-2 rounded-lg hover:bg-stone-400"
+          >
+            Lihat Semua Potensi Desa
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demografi -->
+    <section class="py-16 bg-stone-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-stone-800 mb-8 text-center">
+          DEMOGRAFI DESA
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6" data-aos="fade-up">
+          <!-- Total Penduduk -->
+          <div
+            class="demografi-card bg-white p-6 rounded-xl shadow-lg text-center relative"
+          >
+            <div
+              class="absolute inset-0 bg-amber-100 opacity-30 rounded-xl"
+            ></div>
+            <div class="relative z-10">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-amber-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <div class="text-4xl font-bold text-amber-600 mb-2">5,000</div>
+              <div class="text-stone-600 font-medium">Total Penduduk</div>
+            </div>
+          </div>
+
+          <!-- Laki-laki -->
+          <div
+            class="demografi-card bg-white p-6 rounded-xl shadow-lg text-center relative"
+          >
+            <div
+              class="absolute inset-0 bg-blue-100 opacity-30 rounded-xl"
+            ></div>
+            <div class="relative z-10">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              <div class="text-4xl font-bold text-blue-500 mb-2">2,500</div>
+              <div class="text-stone-600">Laki-laki</div>
+            </div>
+          </div>
+
+          <!-- Perempuan -->
+          <div
+            class="demografi-card bg-white p-6 rounded-xl shadow-lg text-center relative"
+          >
+            <div
+              class="absolute inset-0 bg-pink-100 opacity-30 rounded-xl"
+            ></div>
+            <div class="relative z-10">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-pink-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              <div class="text-4xl font-bold text-pink-400 mb-2">2,500</div>
+              <div class="text-stone-600">Perempuan</div>
+            </div>
+          </div>
+
+          <!-- Total KK -->
+          <div
+            class="demografi-card bg-white p-6 rounded-xl shadow-lg text-center relative"
+          >
+            <div
+              class="absolute inset-0 bg-orange-100 opacity-30 rounded-xl"
+            ></div>
+            <div class="relative z-10">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-orange-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+              <div class="text-4xl font-bold text-orange-500 mb-2">1,298</div>
+              <div class="text-stone-600">Total KK</div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="text-center mt-6">
+          <a
+            href="demografi.html"
+            class="bg-stone-300 text-stone-800 px-6 py-2 rounded-lg hover:bg-stone-400"
+          >
+            Selengkapnya →
+          </a>
+      </div>
+    </section>
+
+    <!-- Section Berita & Agenda -->
+    <section class="py-16">
+      <div class="container mx-auto flex flex-col md:flex-row gap-8 px-6">
+        <!-- Bagian Berita -->
+        <div class="flex-1" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-6">BERITA TERKINI</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Berita 1 -->
+            <div
+              class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 news-card"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/news1.jpg"
+                alt="Gambar Berita 1"
+                class="w-full h-48 object-cover rounded-md"
+              />
+              <h3 class="text-stone-800 text-xl font-semibold mt-4">
+                Judul Berita 1
+              </h3>
+              <p class="text-stone-600 text-sm mt-2">
+                Deskripsi singkat berita pertama. Berita ini membahas tentang
+                kegiatan terbaru di Desa Kalikayen.
+              </p>
+              <a
+                href="#"
+                class="text-stone-800 font-semibold mt-4 inline-block hover:text-stone-500"
+                >Baca selengkapnya →</a
+              >
+            </div>
+            <!-- Berita 2 -->
+            <div
+              class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 news-card"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/news2.jpg"
+                alt="Gambar Berita 2"
+                class="w-full h-48 object-cover rounded-md"
+              />
+              <h3 class="text-stone-800 text-xl font-semibold mt-4">
+                Judul Berita 2
+              </h3>
+              <p class="text-stone-600 text-sm mt-2">
+                Deskripsi singkat berita kedua. Berita ini membahas tentang
+                festival budaya yang akan datang.
+              </p>
+              <a
+                href="#"
+                class="text-stone-800 font-semibold mt-4 inline-block hover:text-stone-500"
+                >Baca selengkapnya →</a
+              >
+            </div>
+          </div>
+          <div class="text-center mt-6">
+            <a
+              href="berita.html"
+              class="bg-stone-300 text-stone-800 px-6 py-2 rounded-lg hover:bg-stone-400"
+            >
+              Lihat Semua Berita →
+            </a>
+          </div>
+        </div>
+
+        <!-- Bagian Agenda -->
+        <div class="flex-1" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-6">KALENDER</h2>
+          <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+            <div id="calendar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeri -->
+    <section class="py-16 bg-stone-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-stone-800 mb-8 text-center">
+          GALERI TERBARU
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" data-aos="fade-up">
+          <img
+            src="img/kalikayen-mengaji.jpg"
+            alt="Kegiatan Mengaji"
+            class="w-full h-48 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src="img/img_9493.webp"
+            alt="Gotong Royong"
+            class="w-full h-48 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src="img/uoLkYqfnyp76C097QWEMXhZoORXYb8ubBXAj1lVg.jpg"
+            alt="Workshop UMKM"
+            class="w-full h-48 object-cover rounded-lg shadow-md"
+          />
+        </div>
+        <div class="mt-6 text-center">
+          <a
+            href="galeri.html"
+            class="bg-stone-300 text-stone-800 px-6 py-2 rounded-lg hover:bg-stone-400"
+            >Lihat Galeri Lengkap</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-300 text-stone-800 py-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-wrap justify-between">
+          <!-- Alamat -->
+          <div class="footer-section">
+            <h5 class="font-bold mb-2">Alamat Desa</h5>
+            <p>Jl. Desa Kalikayen No. 10</p>
+            <p>Kecamatan Ungaran</p>
+            <p>Kabupaten Semarang</p>
+            <p>Jawa Tengah 50511</p>
+          </div>
+
+          <!-- Kontak -->
+          <div class="footer-section">
+            <h5 class="font-bold mb-2">Kontak</h5>
+            <p>📞 (024) 1234-5678</p>
+            <p>📱 0822-5678-9012</p>
+            <p>📧 info@kalikayen.desa.id</p>
+          </div>
+
+          <!-- Jam Kerja -->
+          <div class="footer-section">
+            <h5 class="font-bold mb-2">Jam Kerja</h5>
+            <p>Senin - Kamis: 08.00 - 15.00</p>
+            <p>Jumat: 08.00 - 11.30</p>
+            <p>Sabtu - Minggu: Tutup</p>
+          </div>
+
+          <!-- Tautan Cepat -->
+          <div class="footer-section">
+            <h5 class="font-bold mb-2">Tautan Cepat</h5>
+            <ul class="space-y-1">
+              <li>
+                <a href="berita.html" class="hover:text-stone-600">Berita</a>
+              </li>
+              <li>
+                <a href="agenda.html" class="hover:text-stone-600">Agenda</a>
+              </li>
+              <li>
+                <a href="galeri.html" class="hover:text-stone-600">Galeri</a>
+              </li>
+              <li>
+                <a href="kontak.html" class="hover:text-stone-600">Kontak</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="mt-8 text-center border-t pt-4">
+          <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-stone-600">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="hover:text-stone-600">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="hover:text-stone-600">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.848 12.459c.202.038.202.331.001.369-1.907.361-6.045 1.111-6.547 1.111-.719 0-1.301-.582-1.301-1.301 0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.614z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hak Cipta -->
+        <div class="mt-8 text-center text-sm">
+          <p>© 2024 Desa Kalikayen. Seluruh hak cipta dilindungi.</p>
+          <p>Dikembangkan oleh Tim IT Desa Kalikayen</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
