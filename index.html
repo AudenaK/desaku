@@ -668,90 +668,84 @@
     </section>
 
 
-    <!-- Footer -->
     <footer class="bg-stone-300 text-stone-800 py-8">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-wrap justify-between">
+      <div class="container mx-auto px-4 md:px-6">
+        <!-- Bagian Utama Footer -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <!-- Alamat -->
           <div class="footer-section">
-            <h5 class="font-bold mb-2">Alamat Desa</h5>
-            <p>Jl. Desa Kalikayen No. 10</p>
-            <p>Kecamatan Ungaran</p>
-            <p>Kabupaten Semarang</p>
-            <p>Jawa Tengah 50511</p>
+            <h5 class="font-bold text-lg mb-3">Alamat Desa</h5>
+            <p class="mb-1">Jl. Desa Kalikayen No. 10</p>
+            <p class="mb-1">Kecamatan Ungaran</p>
+            <p class="mb-1">Kabupaten Semarang</p>
+            <p class="mb-1">Jawa Tengah 50511</p>
           </div>
-
+    
           <!-- Kontak -->
           <div class="footer-section">
-            <h5 class="font-bold mb-2">Kontak</h5>
-            <p>📞 (024) 1234-5678</p>
-            <p>📱 0822-5678-9012</p>
-            <p>📧 info@kalikayen.desa.id</p>
+            <h5 class="font-bold text-lg mb-3">Kontak</h5>
+            <p class="mb-2">📞 (024) 1234-5678</p>
+            <p class="mb-2">📱 0822-5678-9012</p>
+            <p class="mb-2">📧 info@kalikayen.desa.id</p>
           </div>
-
+    
           <!-- Jam Kerja -->
           <div class="footer-section">
-            <h5 class="font-bold mb-2">Jam Kerja</h5>
-            <p>Senin - Kamis: 08.00 - 15.00</p>
-            <p>Jumat: 08.00 - 11.30</p>
-            <p>Sabtu - Minggu: Tutup</p>
+            <h5 class="font-bold text-lg mb-3">Jam Kerja</h5>
+            <p class="mb-1">Senin - Kamis: 08.00 - 15.00</p>
+            <p class="mb-1">Jumat: 08.00 - 11.30</p>
+            <p class="mb-1">Sabtu - Minggu: Tutup</p>
           </div>
-
+    
           <!-- Tautan Cepat -->
           <div class="footer-section">
-            <h5 class="font-bold mb-2">Tautan Cepat</h5>
-            <ul class="space-y-1">
+            <h5 class="font-bold text-lg mb-3">Tautan Cepat</h5>
+            <ul class="space-y-2">
               <li>
-                <a href="berita.html" class="hover:text-stone-600">Berita</a>
+                <a href="berita.html" class="hover:text-stone-600 transition-colors duration-200">Berita</a>
               </li>
               <li>
-                <a href="agenda.html" class="hover:text-stone-600">Agenda</a>
+                <a href="agenda.html" class="hover:text-stone-600 transition-colors duration-200">Agenda</a>
               </li>
               <li>
-                <a href="galeri.html" class="hover:text-stone-600">Galeri</a>
+                <a href="galeri.html" class="hover:text-stone-600 transition-colors duration-200">Galeri</a>
               </li>
               <li>
-                <a href="kontak.html" class="hover:text-stone-600">Kontak</a>
+                <a href="kontak.html" class="hover:text-stone-600 transition-colors duration-200">Kontak</a>
               </li>
             </ul>
           </div>
         </div>
-
+    
         <!-- Social Media -->
-        <div class="mt-8 text-center border-t pt-4">
-          <div class="flex justify-center space-x-6">
-            <a href="#" class="hover:text-stone-600">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                />
+        <div class="mt-8 border-t border-stone-400 pt-6">
+          <div class="flex justify-center space-x-8">
+            <a href="#" class="hover:text-stone-600 transition-colors duration-200">
+              <svg class="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
               </svg>
             </a>
-            <a href="#" class="hover:text-stone-600">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"
-                />
+            <a href="#" class="hover:text-stone-600 transition-colors duration-200">
+              <svg class="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
               </svg>
             </a>
-            <a href="#" class="hover:text-stone-600">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.848 12.459c.202.038.202.331.001.369-1.907.361-6.045 1.111-6.547 1.111-.719 0-1.301-.582-1.301-1.301 0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.614z"
-                />
+            <a href="#" class="hover:text-stone-600 transition-colors duration-200">
+              <svg class="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.848 12.459c.202.038.202.331.001.369-1.907.361-6.045 1.111-6.547 1.111-.719 0-1.301-.582-1.301-1.301 0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.614z" />
               </svg>
             </a>
           </div>
         </div>
-
+    
         <!-- Hak Cipta -->
-        <div class="mt-8 text-center text-sm">
-          <p>© 2024 Desa Kalikayen. Seluruh hak cipta dilindungi.</p>
+        <div class="mt-6 text-center text-sm">
+          <p class="mb-1">© 2024 Desa Kalikayen. Seluruh hak cipta dilindungi.</p>
           <p>Dikembangkan oleh Tim IT Desa Kalikayen</p>
         </div>
       </div>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
     <script src="script.js"></script>
 
